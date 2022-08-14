@@ -1,25 +1,22 @@
-import logo from './logo.svg';
-import './App.css';
+import MainLayouts from "./components/Layouts/main.layouts";
+import Images from "./components/Albums/index.albums";
+import {BrowserRouter as Router, Routes, Route} from "react-router-dom";
 
-function App() {
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <>
+      <MainLayouts>
+        <Router>
+          <Routes>
+            <Route path="/" element={<h1>HALO INI HOMEPAGE</h1>} />
+            <Route path="/posts" element={<h1>POST</h1>} />
+            <Route path="/albums" element={<Images />} />
+            <Route path="*" element={<h1 className="text-danger">404 NOT FOUND</h1>} />
+          </Routes>
+        </Router>
+      </MainLayouts>
+    
+    </>
+  )
 }
-
 export default App;
