@@ -1,6 +1,8 @@
 import MainLayouts from "./components/Layouts/main.layouts";
 import Images from "./components/Albums/index.albums";
 import {BrowserRouter as Router, Routes, Route} from "react-router-dom";
+import Post from "./components/Posts/index.posts";
+import Home from "./components/Home/index.home";
 
 const App = () => {
   return (
@@ -8,8 +10,8 @@ const App = () => {
       <MainLayouts>
         <Router>
           <Routes>
-            <Route path="/" element={<h1>HALO INI HOMEPAGE</h1>} />
-            <Route path="/posts" element={<h1>POST</h1>} />
+            <Route path="/" element={<Home/>} />
+            <Route path="/posts" element={<Post />} />
             <Route path="/albums" element={<Images />} />
             <Route path="*" element={<h1 className="text-danger">404 NOT FOUND</h1>} />
           </Routes>

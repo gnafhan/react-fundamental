@@ -6,8 +6,6 @@ const Images = ({title, description}) => {
     return (
         <React.Fragment>
             <Container className='mt-2'>
-                <h1>{title}</h1>
-                <i>{description}</i>
                 <Collection/>
             </Container>
         </React.Fragment>
